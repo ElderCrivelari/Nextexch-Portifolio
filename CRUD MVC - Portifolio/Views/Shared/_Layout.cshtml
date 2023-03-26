@@ -11,23 +11,65 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CRUD_MVC___Portifolio</a>
+                <a asp-controller="Home" asp-action="Index"> <img src="~/img/LogoNexTech.png" alt="NextechLogo" style="height: 4.5rem;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav flex-grow-1 d-flex flex-row-reverse">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-black dropdown-toggle show display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produtos</a>
+                            <div class="dropdown-menu show" aria-labelledby="dropdown-237" data-bs-popper="none">
+                                <a class="text-black dropdown-item text-primary display-4" href="clientmanager.html">Client Manager<br></a>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                       
                     </ul>
                 </div>
             </div>
         </nav>
+       @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+
+                        <a asp-controller="Home" asp-action="Index"> <img src="~/img/LogoNexTech.png" alt="NextechLogo" style="height: 4.5rem;"></a>
+
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="https://mobiri.se"></a></span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-black text-primary display-4" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link text-black dropdown-toggle show display-4" href="https://mobirise.com" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produtos</a>
+                            <div class="dropdown-menu show" aria-labelledby="dropdown-237" data-bs-popper="none">
+                                <a class="text-black dropdown-item text-primary display-4" href="clientmanager.html">Client Manager<br></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black text-primary display-4" href="quemsomos.html">Quem Somos</a>
+                        </li>
+                    </ul>
+
+                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://mobiri.se">Login</a></div>
+                </div>
+            </div>
+        </nav>*@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
