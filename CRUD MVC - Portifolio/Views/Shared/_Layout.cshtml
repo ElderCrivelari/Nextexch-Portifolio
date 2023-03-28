@@ -3,85 +3,60 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CRUD_MVC___Portifolio</title>
+    <title>@ViewData["Title"] - NexTech</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a asp-controller="Home" asp-action="Index"> <img src="~/img/LogoNexTech.png" alt="NextechLogo" style="height: 4.5rem;"></a>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/img/LogoNexTech.png" alt="NextechLogo" style="height: 4.5rem;">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav flex-grow-1 d-flex flex-row-reverse">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link text-black dropdown-toggle show display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produtos</a>
-                            <div class="dropdown-menu show" aria-labelledby="dropdown-237" data-bs-popper="none">
-                                <a class="text-black dropdown-item text-primary display-4">Client Manager<br></a>
-                            </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav flex-grow-1 flex-row-reverse">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="QuemSomos">Quem Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"> | </a>
+                        </li>
+                        <li class="nav-item">
+                        <li>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="ClientManager">Client Manager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"> | </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                       
                     </ul>
                 </div>
             </div>
         </nav>
-       @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <div class="navbar-brand">
-                    <span class="navbar-logo">
 
-                        <a asp-controller="Home" asp-action="Index"> <img src="~/img/LogoNexTech.png" alt="NextechLogo" style="height: 4.5rem;"></a>
-
-                    </span>
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="https://mobiri.se"></a></span>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item">
-                            <a class="nav-link link text-black text-primary display-4" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link text-black dropdown-toggle show display-4" href="https://mobirise.com" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produtos</a>
-                            <div class="dropdown-menu show" aria-labelledby="dropdown-237" data-bs-popper="none">
-                                <a class="text-black dropdown-item text-primary display-4" href="clientmanager.html">Client Manager<br></a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link text-black text-primary display-4" href="quemsomos.html">Quem Somos</a>
-                        </li>
-                    </ul>
-
-                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://mobiri.se">Login</a></div>
-                </div>
-            </div>
-        </nav>*@
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2023 - CRUD_MVC___Portifolio - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - Portifolio - NexTech
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
