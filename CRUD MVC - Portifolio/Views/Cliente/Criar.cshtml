@@ -13,22 +13,22 @@
 <h1 class="text-center">Adicionar Clientes:</h1>
 <form asp-controller="Cliente" asp-action="Criar" method="post">
     <div class="mb-3">
-        <label for="textNome" class="form-label">Nome</label>
+        <label for="textNome" class="form-label">Nome:</label>
         <input type="text" asp-for="Nome" class="form-control" id="textNome" aria-describedby="helpNome">
     </div>
     <div class="mb-3">
-        <label for="textEndereco" class="form-label">Endereço</label>
+        <label for="textEndereco" class="form-label">Endereço:</label>
         <input type="text" asp-for="Endereco" class="form-control" id="textEndereço" aria-describedby="helpEndereco">
     </div>
     <div class="mb-3">
-        <label for="textFone" class="form-label">(11)11111-1111</label>
+        <label for="textFone" class="form-label">Telefone:</label>
         <input type="tel" asp-for="Telefone" class="form-control" id="textFone" aria-describedby="helpFone">
-        <div id="helpFone" class="form-text">Colocar código de área</div>
     </div>
     <div class="mb-3">
-        <label for="textEmail" class="form-label">Email</label>
+        <label for="textEmail" class="form-label">Email:</label>
         <input type="email" asp-for="Email" class="form-control" id="textEmail" aria-describedby="helpEmail">
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
 </form>

@@ -1,31 +1,50 @@
-﻿using CRUD_MVC___Portifolio.Repository;
+﻿using CRUD_MVC___Portifolio.Models;
+using CRUD_MVC___Portifolio.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace CRUD_MVC___Portifolio.Controllers
 {
     public class ClienteController : Controller
     {
-        private readonly ILoginRepository _loginRepository;
+        private readonly IClienteRepository _clienteRepository;
 
-        public ClienteController(ILoginRepository loginRepository)
+        public ClienteController(IClienteRepository clienteRepository)
         {
-            _loginRepository = loginRepository;
+           _clienteRepository = clienteRepository;
         }
         public IActionResult Index()
         {
-            return View();
+            var clientes = _clienteRepository.BuscarClientes();
+            return View(clientes);
         }
         public IActionResult Criar()
         {
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            return View(cliente);
         }
-        public IActionResult Apagar()
+        public IActionResult Apagar(int id)
         {
-            return View();
+            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            return View(cliente);
+        }
+
+        [HttpPost]
+        public IActionResult Criar(ClienteModel cliente)
+        {
+            _clienteRepository.Adicionar(cliente);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult SalvarEdicao(int id)
+        {
+            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            return RedirectToAction("Index");
         }
     }
 }

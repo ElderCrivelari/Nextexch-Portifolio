@@ -1,7 +1,7 @@
 ﻿@using CRUD_MVC___Portifolio
 @using CRUD_MVC___Portifolio.Models
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model ClienteModel
+@model List<ClienteModel>
 @{
     ViewData["Title"] = "Clientes";
 }
@@ -11,6 +11,9 @@
 
 <h1 class="text-center">Clientes:</h1>
 <br />
+<div class="text-left">
+    <a role="button" class="btn btn-success btn-lg" asp-controller="Cliente" asp-action="Criar">Novo</a>
+</div>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
@@ -22,12 +25,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-            <td>mailto@mail.com</td>
-        </tr>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var cliente in Model)
+            {
+                <tr>
+                    <th scope="row">@cliente.Id</th>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Endereco</td>
+                    <td>@cliente.Telefone</td>
+                    <td>@cliente.Email</td>
+                    <td class="btn-group" role="group" aria-label="botao">
+                        <a role="button" class="btn btn-primary" asp-route-id="@cliente.Id" asp-controller="Cliente" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@cliente.Id" asp-controller="Cliente" asp-action="Apagar">Apagar</a>
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
 </table>

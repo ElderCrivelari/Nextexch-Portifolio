@@ -3,10 +3,33 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model ClienteModel
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Editar " + Model.Nome;
 }
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="~/css/Home.css" />
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
 
+<h1 class="text-center">Editar "@Model.Nome" :</h1>
+<form asp-controller="Cliente" asp-action="Editar" method="post">
+    <input  type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label for="textNome" class="form-label">Nome:</label>
+        <input type="text" asp-for="Nome" class="form-control" id="textNome" aria-describedby="helpNome">
+    </div>
+    <div class="mb-3">
+        <label for="textEndereco" class="form-label">Endereço:</label>
+        <input type="text" asp-for="Endereco" class="form-control" id="textEndereço" aria-describedby="helpEndereco">
+    </div>
+    <div class="mb-3">
+        <label for="textFone" class="form-label">Telefone:</label>
+        <input type="tel" asp-for="Telefone" class="form-control" id="textFone" aria-describedby="helpFone">
+    </div>
+    <div class="mb-3">
+        <label for="textEmail" class="form-label">Email:</label>
+        <input type="email" asp-for="Email" class="form-control" id="textEmail" aria-describedby="helpEmail">
+    </div>
+
+    <button type="submit" asp-controller="Cliente" asp-action="SalvarEdicao" class="btn btn-primary">Salvar Alterações</button>
+    <a role="button" asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Voltar</a>
+</form>
