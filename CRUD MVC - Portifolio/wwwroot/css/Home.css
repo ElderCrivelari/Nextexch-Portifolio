@@ -1,1 +1,5 @@
-﻿
+﻿.block-info {
+    border:3px solid blue;
+    min-height: 300px;
+    
+}

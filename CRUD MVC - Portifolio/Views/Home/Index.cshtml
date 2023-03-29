@@ -8,34 +8,30 @@
 <link rel="stylesheet" href="~/css/Home.css" />
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-6">
-            <div class="text-center">
-                <h1 class="">Seja Bem Vindo!</h1>
-                <p>Para começar, por favor faça login ao lado:</p>
-            </div>
+<div class="container-fluid text-center">
+    <h1>Seja bem vindo ao site da NexTech!</h1>
+    <br />
+    <h3>Você deseja: </h3>
+    <br />
+    <br />
+    <div class="row align-items-center">
+        <div class="col-4">
+            <h4>Acessar o Client Manager:</h4>
+            <p>Acesse agora e comece a cadastrar seus clientes de forma prática!</p>
+            <a role="button" class="btn btn-primary" asp-controller="Login" asp-action="Index">Login</a>
         </div>
-        <div cache="col-6">           
-            <form>
-                <div class="form-group">
-                    <label for="textUsuario">Usuário:</label>
-                    <input type="text" class="form-control" id="textUsuario" aria-describedby="usuarioHelp" placeholder="Insira seu nome de usuário">
-                    <small id="emailHelp" class="form-text text-muted">Seu nome de usuário expirará em 1 semana!</small>
-                </div>
-                <div class="form-group">
-                    <label for="textPassword">Senha:</label>
-                    <input type="password" class="form-control" id="textPassword" placeholder="Senha">
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="submit" class="btn btn-success" asp-controller="Login" asp-action="Index">Cadastrar</button>
-                </div>
-            </form>
+        <div class="col-4">
+            <h4>Cadastrar no Client Manager:</h4>
+            <p>Ainda não tem cadastro? É totalmente gratuito, e você ainda pode testar as outras funcionalidades por uma semana!</p>
+            <a role="button" class="btn btn-primary" asp-controller="Login" asp-action="Criar">Cadastrar</a>
+        </div>
+        <div class="col-4">
+            <h4>Ver informações sobre o site:</h4>
+            <p>Gostaria de saber mais sobre o criador do site? Acesse a página "Quem somos" e descubra mais sobre o criador</p>
+            <a role="button" class="btn btn-primary" asp-controller="QuemSomos" asp-action="Index">Quem Somos</a>
         </div>
     </div>
 </div>
-
 
 
 
