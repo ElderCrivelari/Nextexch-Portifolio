@@ -17,15 +17,10 @@ namespace CRUD_MVC___Portifolio.Controllers
             return View();
         }
 
-        public IActionResult ClientManager()
-        {
-            return View();
-        }
+        
 
-        public IActionResult QuemSomos()
-        {
-            return View(); 
-        }
+      
+       
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
