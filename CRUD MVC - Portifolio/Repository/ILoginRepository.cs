@@ -9,6 +9,6 @@ namespace CRUD_MVC___Portifolio.Repository
 
         LoginModel Adicionar(LoginModel login);
 
-
+        LoginModel SalvarEdicao(LoginModel login);
     }
 }

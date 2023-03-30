@@ -32,6 +32,21 @@ namespace CRUD_MVC___Portifolio.Repository
             return userLogin;
         }
 
-       
+        public LoginModel SalvarEdicao(LoginModel login)
+        {
+            LoginModel loginDB = BuscarLogins(login.Id);
+
+            if (loginDB == null) throw new System.Exception("Houve um erro ao alterar o seu login!");
+
+            loginDB.Usuario = login.Usuario;
+            loginDB.Senha   = login.Senha;
+            
+            _bancoContext.Logins.Update(loginDB);
+            _bancoContext.SaveChanges();
+
+            return loginDB;
+
+            
+        }
     }
 }

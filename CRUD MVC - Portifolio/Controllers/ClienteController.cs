@@ -29,7 +29,13 @@ namespace CRUD_MVC___Portifolio.Controllers
         }
         public IActionResult Apagar(int id)
         {
-            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            _clienteRepository.Apagar(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            var cliente = _clienteRepository.BuscarCliente(id);
             return View(cliente);
         }
 
@@ -41,9 +47,11 @@ namespace CRUD_MVC___Portifolio.Controllers
         }
 
         [HttpPost]
-        public IActionResult SalvarEdicao(int id)
+        public IActionResult SalvarEdicao(ClienteModel cliente)
         {
-            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+
+            _clienteRepository.SalvarEdicao(cliente);
+
             return RedirectToAction("Index");
         }
     }

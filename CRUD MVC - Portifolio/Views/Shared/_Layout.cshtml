@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model LoginModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -40,6 +41,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (Model !=null)
+                        {
+                            <li class="nav-item">
+                                <p class="nav-link text-dark">Bom dia @Model.Usuario ! </p>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                            </li>
+                        }
+                        else
+                        {
+                            
+                        }
                     </ul>
                 </div>
             </div>

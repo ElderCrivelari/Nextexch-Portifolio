@@ -12,5 +12,7 @@ namespace CRUD_MVC___Portifolio.Repository
         ClienteModel BuscarCliente(int id);
 
         ClienteModel SalvarEdicao(ClienteModel cliente);
+
+        bool Apagar(int id);
     }
 }

@@ -35,16 +35,40 @@ namespace CRUD_MVC___Portifolio.Repository
         public ClienteModel SalvarEdicao(ClienteModel cliente)
         {
             ClienteModel clienteDB = BuscarCliente(cliente.Id);
-            if (clienteDB != null) throw new System.Exception("Houve um erro ao editar o cliente!");
+            if (clienteDB != null)
+            {
+                clienteDB.Nome = cliente.Nome;
+                clienteDB.Telefone = cliente.Telefone;
+                clienteDB.Endereco = cliente.Endereco;
+                clienteDB.Email = cliente.Email;
 
-            clienteDB.Nome = cliente.Nome;
-            clienteDB.Telefone = cliente.Telefone;
-            clienteDB.Endereco = cliente.Endereco;
-            clienteDB.Email = cliente.Email;
+                _bancoContext.Clientes.Update(clienteDB);
+                _bancoContext.SaveChanges();
+                return clienteDB;
+            }
+            else
+            {
+                throw new System.Exception("Houve um erro ao editar o cliente!");
+            } 
+        }
 
-            _bancoContext.Clientes.Update(clienteDB);
-            _bancoContext.SaveChanges();
-            return clienteDB;
+        public bool Apagar(int id)
+        {
+            ClienteModel clienteDB = BuscarCliente(id);
+            if (clienteDB != null)
+            {
+                _bancoContext.Clientes.Remove(clienteDB);
+                _bancoContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                throw new System.Exception("Houve um erro ao editar o cliente!");
+            }
+            
+
+            
+            
         }
     }
 }

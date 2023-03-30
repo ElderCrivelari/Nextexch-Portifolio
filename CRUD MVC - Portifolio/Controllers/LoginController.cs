@@ -33,11 +33,23 @@ namespace CRUD_MVC___Portifolio.Controllers
             return View();
         }
 
+        public IActionResult Logar() 
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Criar(LoginModel login)
         {
             _loginRepository.Adicionar(login);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Editar(LoginModel login)
+        {
+
+            return View();
         }
     }
 }
