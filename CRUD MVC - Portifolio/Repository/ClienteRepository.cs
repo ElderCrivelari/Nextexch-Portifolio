@@ -35,7 +35,7 @@ namespace CRUD_MVC___Portifolio.Repository
         public ClienteModel SalvarEdicao(ClienteModel cliente)
         {
             ClienteModel clienteDB = BuscarCliente(cliente.Id);
-            if (clienteDB != null) throw new System.Exception("Houve um erro ao editar o cliente!");
+            if (clienteDB == null) throw new System.Exception("Houve um erro ao editar o cliente!");
 
             clienteDB.Nome = cliente.Nome;
             clienteDB.Telefone = cliente.Telefone;
@@ -45,6 +45,17 @@ namespace CRUD_MVC___Portifolio.Repository
             _bancoContext.Clientes.Update(clienteDB);
             _bancoContext.SaveChanges();
             return clienteDB;
+        }
+
+        public bool ConfirmarExclusao(ClienteModel cliente)
+        {
+            if (cliente == null) throw new System.Exception("Registro não encontrado");
+            
+            _bancoContext.Clientes.Remove(cliente);
+            _bancoContext.SaveChanges();
+
+            return true;
+           
         }
     }
 }

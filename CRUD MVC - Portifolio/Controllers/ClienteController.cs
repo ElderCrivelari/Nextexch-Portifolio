@@ -32,6 +32,12 @@ namespace CRUD_MVC___Portifolio.Controllers
             ClienteModel cliente = _clienteRepository.BuscarCliente(id);
             return View(cliente);
         }
+        public IActionResult ConfirmarExclusao(int id)
+        {
+            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            _clienteRepository.ConfirmarExclusao(cliente);
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public IActionResult Criar(ClienteModel cliente)
@@ -41,9 +47,11 @@ namespace CRUD_MVC___Portifolio.Controllers
         }
 
         [HttpPost]
-        public IActionResult SalvarEdicao(int id)
+        public IActionResult SalvarEdicao(ClienteModel cliente)
         {
-            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            
+            _clienteRepository.SalvarEdicao(cliente);
+
             return RedirectToAction("Index");
         }
     }

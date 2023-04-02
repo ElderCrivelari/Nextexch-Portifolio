@@ -7,10 +7,10 @@ namespace CRUD_MVC___Portifolio.Repository
     {
 
         ClienteModel Adicionar(ClienteModel cliente);
-
         List<ClienteModel> BuscarClientes();
         ClienteModel BuscarCliente(int id);
-
         ClienteModel SalvarEdicao(ClienteModel cliente);
+
+        bool ConfirmarExclusao(ClienteModel cliente);
     }
 }

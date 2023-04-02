@@ -12,6 +12,6 @@
 <h1>Apagar "@Model.Id - @Model.Nome" ?</h1>
 <p>Deseja realmente apagar o cliente acima?</p>
 <div class="btn-group" role="group" aria-label="botao">
-    <a role="button" class="btn btn-danger" asp-route-id="@Model.Id" asp-controller="Cliente" asp-action="Apagar">Apagar</a>
+    <a role="button" class="btn btn-danger" asp-route-id="@Model.Id" asp-controller="Cliente" asp-action="ConfirmarExclusao">Apagar</a>
     <a role="button" class="btn btn-primary" asp-route-id="@Model.Id" asp-controller="Cliente" asp-action="Index">Cancelar</a>
 </div>

@@ -28,7 +28,6 @@ namespace CRUD_MVC___Portifolio
         {
             services.AddControllersWithViews();
             services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
-            services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
         }
 
