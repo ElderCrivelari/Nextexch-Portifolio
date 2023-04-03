@@ -41,27 +41,6 @@ namespace CRUD_MVC___Portifolio.Migrations
 
                     b.ToTable("Clientes");
                 });
-
-            modelBuilder.Entity("CRUD_MVC___Portifolio.Models.LoginModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DataCadastro")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Senha")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Usuario")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Logins");
-                });
 #pragma warning restore 612, 618
         }
     }

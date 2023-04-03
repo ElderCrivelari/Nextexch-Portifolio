@@ -1,4 +1,5 @@
-﻿using CRUD_MVC___Portifolio.Models;
+﻿
+using CRUD_MVC___Portifolio.Models;
 using CRUD_MVC___Portifolio.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -27,9 +28,14 @@ namespace CRUD_MVC___Portifolio.Controllers
             ClienteModel cliente = _clienteRepository.BuscarCliente(id);
             return View(cliente);
         }
-        public IActionResult Apagar(int id)
+        public IActionResult Apagar(ClienteModel cliente)
         {
-            ClienteModel cliente = _clienteRepository.BuscarCliente(id);
+            return View(cliente);
+        }
+
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            var cliente = _clienteRepository.BuscarCliente(id);
             return View(cliente);
         }
         public IActionResult ConfirmarExclusao(int id)
@@ -49,9 +55,7 @@ namespace CRUD_MVC___Portifolio.Controllers
         [HttpPost]
         public IActionResult SalvarEdicao(ClienteModel cliente)
         {
-            
             _clienteRepository.SalvarEdicao(cliente);
-
             return RedirectToAction("Index");
         }
     }

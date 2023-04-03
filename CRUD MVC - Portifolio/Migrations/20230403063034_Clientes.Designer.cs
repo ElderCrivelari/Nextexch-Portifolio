@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_MVC___Portifolio.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20230329201829_Clientes")]
+    [Migration("20230403063034_Clientes")]
     partial class Clientes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,27 +42,6 @@ namespace CRUD_MVC___Portifolio.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Clientes");
-                });
-
-            modelBuilder.Entity("CRUD_MVC___Portifolio.Models.LoginModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DataCadastro")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Senha")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Usuario")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Logins");
                 });
 #pragma warning restore 612, 618
         }
