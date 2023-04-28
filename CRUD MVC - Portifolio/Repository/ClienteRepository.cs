@@ -2,6 +2,7 @@
 using CRUD_MVC___Portifolio.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 
 namespace CRUD_MVC___Portifolio.Repository
 {
@@ -9,9 +10,12 @@ namespace CRUD_MVC___Portifolio.Repository
     {
         private readonly BancoContext _bancoContext;
 
+
         public ClienteRepository(BancoContext bancoContext)
         {
             _bancoContext = bancoContext;
+
+
         }
 
         public ClienteModel Adicionar(ClienteModel cliente)
@@ -22,19 +26,19 @@ namespace CRUD_MVC___Portifolio.Repository
             return cliente;
         }
 
-        public List<ClienteModel> BuscarClientes()
+        public List<ClienteModel> BuscarClientes(string userId)
         {
-            return _bancoContext.Clientes.ToList();
+            return _bancoContext.Clientes.Where(u => u.UsuarioId == userId).ToList();
         }
 
-        public ClienteModel BuscarCliente(int id)
+        public ClienteModel BuscarCliente(int id,string userId)
         {
-            return _bancoContext.Clientes.FirstOrDefault(c => c.Id == id);
+            return _bancoContext.Clientes.FirstOrDefault(c => c.Id == id && c.UsuarioId == userId);
         }
 
         public ClienteModel SalvarEdicao(ClienteModel cliente)
         {
-            ClienteModel clienteDB = BuscarCliente(cliente.Id);
+            ClienteModel clienteDB = BuscarCliente(cliente.Id,cliente.UsuarioId);
             if (clienteDB == null) throw new System.Exception("Houve um erro ao editar o cliente!");
 
             clienteDB.Nome = cliente.Nome;

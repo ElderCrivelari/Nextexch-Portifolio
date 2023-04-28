@@ -10,9 +10,9 @@ namespace CRUD_MVC___Portifolio.Data
 
         }
 
-        public DbSet<ClienteModel> Clientes{ get; set; } //"mostra" qual o Modelo de tabela para o banco de dados.
+        public DbSet<ClienteModel> Clientes{ get; set; } //"mostra" qual o Modelo de tabela de Clientes para o banco de dados.
 
-
+        public DbSet<LoginModel> Logins { get; set; } //"mostra" qual o Modelo de tabela de Login para o banco de dados.
 
     }
 }

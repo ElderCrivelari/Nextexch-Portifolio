@@ -1,0 +1,29 @@
+﻿@using CRUD_MVC___Portifolio
+@using CRUD_MVC___Portifolio.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model LoginModel
+@{
+    ViewData["Title"] = "Cadastrar Login";
+}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="~/css/Home.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container mt-5">
+    <h1 class="text-center">Cadastre-se:</h1>
+    <p class="lead text-center">Cadastre-se abaixo para ter acesso ao sistema!</p>
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+            <form asp-controller="Login" asp-action="Criar" method="post">
+                <label for="inputEmail" class="sr-only">Email de Usuário</label>
+                <input type="email" asp-for=Login id="inputEmail" class="form-control mb-2" placeholder="Email de Usuário" required autofocus>
+                <label for="inputPassword" class="sr-only">Senha</label>
+                <input type="password" asp-for=Senha id="inputPassword" class="form-control mb-2" placeholder="Senha" required>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-lg btn-primary" type="submit">Cadastrar</button>
+                </div>
+            </form>
+            <button class="btn btn-lg btn-primary" asp-controller="Login" asp-action="Index">Voltar</button>
+        </div>
+    </div>
+</div>
