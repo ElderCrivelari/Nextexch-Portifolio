@@ -13,6 +13,7 @@
 <h1 class="text-center">Editar "@Model.Nome" :</h1>
 <form asp-controller="Cliente" asp-action="SalvarEdicao" method="post">
     <input  type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="UsuarioId" />
     <div class="mb-3">
         <label for="textNome" class="form-label">Nome:</label>
         <input type="text" asp-for="Nome" class="form-control" id="textNome" aria-describedby="helpNome">

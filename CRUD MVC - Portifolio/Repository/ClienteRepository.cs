@@ -14,8 +14,6 @@ namespace CRUD_MVC___Portifolio.Repository
         public ClienteRepository(BancoContext bancoContext)
         {
             _bancoContext = bancoContext;
-
-
         }
 
         public ClienteModel Adicionar(ClienteModel cliente)
